@@ -1,0 +1,84 @@
+import React from 'react';
+import { Sun, Battery, ArrowUpRight, Leaf } from 'lucide-react';
+
+const Slide = ({ children, className }) => (
+  <div className={`w-full h-96 p-8 bg-white rounded-lg shadow-lg mb-8 ${className}`}>
+    {children}
+  </div>
+);
+
+const Presentation = () => {
+  return (
+    <div className="max-w-4xl mx-auto space-y-8">
+      {/* Slide 1: Cover */}
+      <Slide className="bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+        <div className="h-full flex flex-col justify-center items-center text-center">
+          <Sun size={64} className="mb-6" />
+          <h1 className="text-4xl font-bold mb-4">Clean Energy for Our Home</h1>
+          <p className="text-xl">Join us in creating a better future</p>
+        </div>
+      </Slide>
+
+      {/* Slide 2: Why Solar Panels? */}
+      <Slide>
+        <h2 className="text-3xl font-bold mb-8 text-gray-800">Why Solar Panels?</h2>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="p-4 bg-blue-50 rounded-lg">
+            <Battery className="mb-2 text-blue-600" />
+            <h3 className="text-xl font-semibold mb-2">Save 30-40%</h3>
+            <p>on common area electricity</p>
+          </div>
+          <div className="p-4 bg-green-50 rounded-lg">
+            <ArrowUpRight className="mb-2 text-green-600" />
+            <h3 className="text-xl font-semibold mb-2">ROI 5-7 Years</h3>
+            <p>Quick return on investment</p>
+          </div>
+          <div className="p-4 bg-yellow-50 rounded-lg">
+            <Sun className="mb-2 text-yellow-600" />
+            <h3 className="text-xl font-semibold mb-2">Property Value</h3>
+            <p>Increase in property value</p>
+          </div>
+          <div className="p-4 bg-emerald-50 rounded-lg">
+            <Leaf className="mb-2 text-emerald-600" />
+            <h3 className="text-xl font-semibold mb-2">Eco-friendly</h3>
+            <p>Reduce environmental impact</p>
+          </div>
+        </div>
+      </Slide>
+
+      {/* Poster */}
+      <div className="w-full h-[32rem] bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-lg p-8 text-white">
+        <div className="h-full flex flex-col justify-between">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold mb-4">Turn Sunlight into Savings</h2>
+            <p className="text-xl">A sustainable future for our community</p>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-6 my-8">
+            <div className="text-center">
+              <div className="text-6xl mb-4">💰</div>
+              <p className="font-semibold">Save on Fees</p>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl mb-4">🌱</div>
+              <p className="font-semibold">Eco-friendly</p>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl mb-4">📈</div>
+              <p className="font-semibold">Increase Value</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors">
+              Vote Today
+            </button>
+            <p className="mt-4">Scan QR Code to participate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Presentation;
